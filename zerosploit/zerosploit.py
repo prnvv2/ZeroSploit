@@ -121,45 +121,50 @@ class ZeroSploit:
         
         print(f"{Fore.YELLOW}[*] Starting port scan for {self.target}...{Style.RESET_ALL}")
         
-        try:
-            # Common ports to scan
-            common_ports = "21,22,23,25,53,80,110,111,135,139,143,443,993,995,1723,3306,3389,5432,5900,8080,8443"
-            
-            # Perform the scan
-            self.nm.scan(self.target, common_ports, arguments='-sV -sC')
-            
-            open_ports = []
-            
-            for host in self.nm.all_hosts():
-                print(f"{Fore.GREEN}[+] Host: {host} ({self.nm[host].hostname()}){Style.RESET_ALL}")
-                print(f"{Fore.GREEN}[+] State: {self.nm[host].state()}{Style.RESET_ALL}")
+        # Use nmap if available, otherwise fall back to basic scanning
+        if self.nmap_available:
+            try:
+                # Common ports to scan
+                common_ports = "21,22,23,25,53,80,110,111,135,139,143,443,993,995,1723,3306,3389,5432,5900,8080,8443"
                 
-                for proto in self.nm[host].all_protocols():
-                    ports = self.nm[host][proto].keys()
+                # Perform the scan
+                self.nm.scan(self.target, common_ports, arguments='-sV -sC')
+                
+                open_ports = []
+                
+                for host in self.nm.all_hosts():
+                    print(f"{Fore.GREEN}[+] Host: {host} ({self.nm[host].hostname()}){Style.RESET_ALL}")
+                    print(f"{Fore.GREEN}[+] State: {self.nm[host].state()}{Style.RESET_ALL}")
                     
-                    for port in ports:
-                        state = self.nm[host][proto][port]['state']
-                        if state == 'open':
-                            service = self.nm[host][proto][port]['name']
-                            version = self.nm[host][proto][port].get('version', 'unknown')
-                            
-                            print(f"{Fore.GREEN}[+] {port}/{proto} - {service} {version}{Style.RESET_ALL}")
-                            
-                            open_ports.append({
-                                'port': port,
-                                'protocol': proto,
-                                'service': service,
-                                'version': version
-                            })
-            
-            if not open_ports:
-                print(f"{Fore.YELLOW}[!] No open ports found{Style.RESET_ALL}")
-            
-            self.log_activity("port_scan", {"target": self.target, "open_ports": open_ports})
-            
-        except Exception as e:
-            print(f"{Fore.RED}[!] Error during port scan: {e}{Style.RESET_ALL}")
-            print(f"{Fore.YELLOW}[*] Falling back to basic socket scan...{Style.RESET_ALL}")
+                    for proto in self.nm[host].all_protocols():
+                        ports = self.nm[host][proto].keys()
+                        
+                        for port in ports:
+                            state = self.nm[host][proto][port]['state']
+                            if state == 'open':
+                                service = self.nm[host][proto][port]['name']
+                                version = self.nm[host][proto][port].get('version', 'unknown')
+                                
+                                print(f"{Fore.GREEN}[+] {port}/{proto} - {service} {version}{Style.RESET_ALL}")
+                                
+                                open_ports.append({
+                                    'port': port,
+                                    'protocol': proto,
+                                    'service': service,
+                                    'version': version
+                                })
+                
+                if not open_ports:
+                    print(f"{Fore.YELLOW}[!] No open ports found{Style.RESET_ALL}")
+                
+                self.log_activity("port_scan", {"target": self.target, "open_ports": open_ports})
+                
+            except Exception as e:
+                print(f"{Fore.RED}[!] Error during nmap scan: {e}{Style.RESET_ALL}")
+                print(f"{Fore.YELLOW}[*] Falling back to basic socket scan...{Style.RESET_ALL}")
+                self.basic_port_scan()
+        else:
+            print(f"{Fore.YELLOW}[*] Using basic port scan (nmap not available)...{Style.RESET_ALL}")
             self.basic_port_scan()
     
     def basic_port_scan(self):
