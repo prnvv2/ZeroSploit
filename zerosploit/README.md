@@ -294,22 +294,85 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [National Vulnerability Database](https://nvd.nist.gov/)
 - [Exploit Database](https://www.exploit-db.com/)
 
-## 📞 Support
+## 📞 Support & Community
+
+<div align="center">
+
+[![GitHub Issues](https://img.shields.io/github/issues/yourusername/zerosploit)](https://github.com/yourusername/zerosploit/issues)
+[![GitHub Discussions](https://img.shields.io/github/discussions/yourusername/zerosploit)](https://github.com/yourusername/zerosploit/discussions)
+
+</div>
 
 If you encounter any issues or have questions:
-- Open an issue on GitHub
-- Check the [Wiki](https://github.com/yourusername/zerosploit/wiki) for documentation
-- Review the [FAQ](https://github.com/yourusername/zerosploit/blob/main/FAQ.md)
+- 🐛 [Open an issue](https://github.com/yourusername/zerosploit/issues) for bug reports
+- 💬 [Start a discussion](https://github.com/yourusername/zerosploit/discussions) for questions
+- 📖 Check the [Documentation](docs/DOCUMENTATION.md) for detailed guides
+- ❓ Review the [FAQ](docs/FAQ.md) for common questions
+- 🔧 See [Examples](examples/) for usage examples
 
 ## 🔄 Changelog
 
-### v1.0.0
-- Initial release
-- Port scanning functionality
-- CVE lookup integration
-- Interactive CLI interface
-- Educational payload suggestions
+<details>
+<summary>Click to see version history</summary>
+
+### v1.0.0 (2025-01-20)
+- 🎉 Initial release
+- ✅ Port scanning functionality using nmap
+- ✅ Vulnerability lookup with CVE database
+- ✅ Interactive CLI interface with colors
+- ✅ Educational payload suggestions
+- ✅ Exploitation tips and methodology
+- ✅ Session logging with JSON export
+- ✅ Comprehensive test suite
+- ✅ Complete documentation
+
+</details>
+
+## 🏆 Acknowledgments
+
+- **OWASP** for security testing methodologies
+- **NMAP** project for network discovery capabilities
+- **MITRE** for CVE database and vulnerability information
+- **Python Security** community for best practices
+- All contributors and security researchers
+
+## ⚖️ License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+```
+MIT License
+
+Copyright (c) 2025 ZeroSploit Development Team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+```
+
+## 🔗 Resources & References
+
+- 🌐 [OWASP Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
+- 🗃️ [CVE Database](https://cve.mitre.org/)
+- 📊 [National Vulnerability Database](https://nvd.nist.gov/)
+- 🔍 [Exploit Database](https://www.exploit-db.com/)
+- 🛡️ [SANS Penetration Testing Resources](https://www.sans.org/white-papers/)
+- 📋 [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
 
 ---
 
+<div align="center">
+
+**⭐ Star this repository if you find it helpful!**
+
+**🔧 Built with Python • 🐧 Made for Linux • 🛡️ Focused on Security**
+
 **Remember: With great power comes great responsibility. Use this tool ethically and legally.**
+
+</div>
