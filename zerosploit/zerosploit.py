@@ -40,8 +40,16 @@ class ZeroSploit:
     def __init__(self):
         self.version = "1.0.0"
         self.target = None
-        self.nm = nmap.PortScanner()
         self.session_log = []
+        
+        # Initialize nmap scanner with error handling
+        try:
+            self.nm = nmap.PortScanner()
+            self.nmap_available = True
+        except Exception as e:
+            print(f"{Fore.YELLOW}[!] Warning: nmap not available. Using basic port scanning only.{Style.RESET_ALL}")
+            self.nm = None
+            self.nmap_available = False
         
     def display_banner(self):
         """Display the ZeroSploit banner"""
