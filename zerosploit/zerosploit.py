@@ -106,9 +106,12 @@ class ZeroSploit:
         if re.match(ip_pattern, target):
             # Additional validation for IP range
             parts = target.split('.')
-            for part in parts:
-                if int(part) > 255:
-                    return False
+            try:
+                for part in parts:
+                    if int(part) > 255:
+                        return False
+            except ValueError:
+                return False
             return target
         
         # Validate domain name
