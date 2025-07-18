@@ -1,10 +1,26 @@
 # ZeroSploit - Vulnerability Intelligence CLI Tool
 
+<div align="center">
+
 [![Python Version](https://img.shields.io/badge/python-3.7%2B-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Linux-lightgrey.svg)](https://www.linux.org/)
+[![GitHub Release](https://img.shields.io/github/v/release/yourusername/zerosploit?include_prereleases)](https://github.com/yourusername/zerosploit/releases)
+[![GitHub Issues](https://img.shields.io/github/issues/yourusername/zerosploit)](https://github.com/yourusername/zerosploit/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/yourusername/zerosploit)](https://github.com/yourusername/zerosploit/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/yourusername/zerosploit)](https://github.com/yourusername/zerosploit/network)
 
-A comprehensive command-line interface tool for vulnerability assessment and penetration testing. ZeroSploit helps security professionals identify vulnerabilities, suggest payloads, and provide exploitation guidance for authorized security testing.
+![ZeroSploit Banner](https://img.shields.io/badge/ZeroSploit-v1.0.0-red?style=for-the-badge&logo=security&logoColor=white)
+
+</div>
+
+A comprehensive command-line interface tool for vulnerability assessment and penetration testing. ZeroSploit helps security professionals identify vulnerabilities, suggest payloads, and provide exploitation guidance for **authorized security testing only**.
+
+<div align="center">
+
+**🔍 Port Scanning • 🛡️ Vulnerability Lookup • 📋 CVE Suggestions • 💊 Payload Testing • 🎯 Exploitation Tips**
+
+</div>
 
 ## ⚠️ Legal Disclaimer
 
