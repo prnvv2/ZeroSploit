@@ -104,11 +104,16 @@ class ZeroSploit:
         # Validate IP address
         ip_pattern = r'^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
         if re.match(ip_pattern, target):
+            # Additional validation for IP range
+            parts = target.split('.')
+            for part in parts:
+                if int(part) > 255:
+                    return False
             return target
         
         # Validate domain name
         domain_pattern = r'^[a-zA-Z0-9][a-zA-Z0-9-_.]*[a-zA-Z0-9]$'
-        if re.match(domain_pattern, target):
+        if re.match(domain_pattern, target) and '..' not in target and '@' not in target:
             return target
         
         return False
