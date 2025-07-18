@@ -48,21 +48,44 @@ A comprehensive command-line interface tool for vulnerability assessment and pen
 - Network access for CVE lookups
 - Optional: nmap (for advanced port scanning)
 
-## 🚀 Installation
+## 🚀 Quick Start
 
-### Method 1: Clone and Install
+### Automated Installation
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/zerosploit.git
+cd zerosploit
+
+# Run the installation script
+./install.sh
+```
+
+### Manual Installation
+```bash
+# Clone and install dependencies
 git clone https://github.com/yourusername/zerosploit.git
 cd zerosploit
 pip install -r requirements.txt
+
+# Install nmap (required for advanced scanning)
+sudo apt-get install nmap  # Ubuntu/Debian
+# or
+sudo yum install nmap      # CentOS/RHEL
+
+# Make executable
 chmod +x zerosploit.py
 ```
 
-### Method 2: Direct Download
+### Quick Test
 ```bash
-wget https://raw.githubusercontent.com/yourusername/zerosploit/main/zerosploit.py
-chmod +x zerosploit.py
-pip install requests colorama python-nmap
+# Basic usage
+python zerosploit.py
+
+# Test with a target
+python zerosploit.py --target google.com
+
+# Get help
+python zerosploit.py --help
 ```
 
 ## 🔧 Usage
