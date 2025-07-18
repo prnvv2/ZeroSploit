@@ -195,18 +195,93 @@ Select an operation to perform:
 
 ## 🛡️ Ethical Guidelines
 
-- **Authorization Required**: Always obtain proper authorization before testing
-- **Responsible Disclosure**: Report vulnerabilities responsibly to vendors
-- **Educational Purpose**: Use this tool to learn about security, not to cause harm
-- **Legal Compliance**: Ensure your testing complies with local laws and regulations
+<div align="center">
+
+### 🚨 IMPORTANT: AUTHORIZED TESTING ONLY 🚨
+
+</div>
+
+- ✅ **Authorization Required**: Always obtain proper authorization before testing
+- ✅ **Responsible Disclosure**: Report vulnerabilities responsibly to vendors
+- ✅ **Educational Purpose**: Use this tool to learn about security, not to cause harm
+- ✅ **Legal Compliance**: Ensure your testing complies with local laws and regulations
+- ❌ **No Unauthorized Scanning**: Never test systems without permission
+- ❌ **No Malicious Use**: This tool is for defensive security purposes only
+
+## 📁 Project Structure
+
+```
+zerosploit/
+├── 📄 zerosploit.py           # Main CLI application
+├── 📄 README.md               # This file
+├── 📄 requirements.txt        # Python dependencies
+├── 📄 setup.py               # Package installation
+├── 📄 install.sh             # Installation script
+├── 📄 LICENSE                # MIT License
+├── 📄 CHANGELOG.md           # Version history
+├── 📄 CONTRIBUTING.md        # Contribution guidelines
+├── 📄 .gitignore            # Git ignore rules
+├── 📁 tests/                 # Test suite
+│   └── 📄 test_zerosploit.py # Unit tests
+├── 📁 docs/                  # Documentation
+│   ├── 📄 DOCUMENTATION.md   # Comprehensive docs
+│   ├── 📄 FAQ.md            # Common questions
+│   └── 📄 STRUCTURE.md      # Project structure
+└── 📁 examples/             # Usage examples
+    ├── 📄 basic_usage.py     # Basic examples
+    └── 📄 batch_scan.py      # Batch scanning
+```
+
+## 🧪 Testing
+
+ZeroSploit comes with a comprehensive test suite:
+
+```bash
+# Run all tests
+python -m pytest tests/ -v
+
+# Run specific test
+python -m pytest tests/test_zerosploit.py::TestZeroSploit::test_validate_target -v
+
+# Run example scripts
+python examples/basic_usage.py
+python examples/batch_scan.py
+```
+
+**Test Coverage**: 10 tests covering target validation, port scanning, vulnerability lookup, and all core features.
+
+## 📈 Roadmap
+
+- [ ] **v1.1.0**: Integration with additional CVE databases
+- [ ] **v1.2.0**: Custom payload templates
+- [ ] **v1.3.0**: Export results to multiple formats (JSON, XML, CSV)
+- [ ] **v1.4.0**: Configuration file support
+- [ ] **v1.5.0**: Web interface version
+- [ ] **v2.0.0**: Database backend for result storage
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Quick Contribute
+1. 🍴 Fork the repository
+2. 🌿 Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. ✨ Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. 📤 Push to the branch (`git push origin feature/AmazingFeature`)
+5. 🔃 Open a Pull Request
+
+### Contributors
+
+<a href="https://github.com/yourusername/zerosploit/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=yourusername/zerosploit" />
+</a>
+
+## 📊 Statistics
+
+![GitHub repo size](https://img.shields.io/github/repo-size/yourusername/zerosploit)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/yourusername/zerosploit)
+![Lines of code](https://img.shields.io/tokei/lines/github/yourusername/zerosploit)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/yourusername/zerosploit)
 
 ## 📝 License
 
