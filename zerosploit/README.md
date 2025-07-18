@@ -115,14 +115,18 @@ python zerosploit.py --help
 
 ## 📊 Example Output
 
+<div align="center">
+
 ```
 ╔════════════════════════════════════╗
-║         ZeroSploit v1.0           ║
+║         ZeroSploit v1.0.0           ║
 ║    Vulnerability Intelligence      ║
 ║           CLI Tool                 ║
 ╠════════════════════════════════════╣
 ║ Target: https://example.com        ║
 ╚════════════════════════════════════╝
+
+⚠️  ETHICAL USE ONLY - AUTHORIZED TESTING REQUIRED
 
 Select an operation to perform:
 [1] Port Scan
@@ -140,6 +144,54 @@ Select an operation to perform:
     - 443/tcp (HTTPS)
     - 22/tcp (SSH)
 ```
+
+</div>
+
+## 🎬 Demo
+
+<details>
+<summary>Click to see a full demo session</summary>
+
+```bash
+$ python zerosploit.py --target google.com
+
+[*] Starting ZeroSploit - Vulnerability Intelligence CLI
+
+╔════════════════════════════════════╗
+║         ZeroSploit v1.0.0           ║
+║    Vulnerability Intelligence      ║
+║           CLI Tool                 ║
+╠════════════════════════════════════╣
+║ Target: google.com                 ║
+╚════════════════════════════════════╝
+
+⚠️  ETHICAL USE ONLY - AUTHORIZED TESTING REQUIRED
+
+Select an operation to perform:
+[1] Port Scan
+[2] Vulnerability Lookup (based on services)
+[3] CVE Suggestion
+[4] Payload Suggestion
+[5] Exploitation Tips
+[0] Exit
+
+>> Enter your choice: 1
+
+[*] Starting port scan for google.com...
+[+] Port 80/tcp - Open
+[+] Port 443/tcp - Open
+
+>> Enter your choice: 3
+
+[*] Generating CVE suggestions for google.com...
+[+] Recent high-impact CVEs to consider:
+    CVE-2023-4966 (CVSS: 9.4)
+    Description: NetScaler Buffer Overflow
+    Affected: Citrix NetScaler ADC and Gateway
+    Recommendation: Update to latest version
+```
+
+</details>
 
 ## 🛡️ Ethical Guidelines
 
