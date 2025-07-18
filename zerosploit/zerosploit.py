@@ -101,18 +101,17 @@ class ZeroSploit:
         # Remove protocol if present
         target = re.sub(r'^https?://', '', target)
         
-        # Validate IP address
-        ip_pattern = r'^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
-        if re.match(ip_pattern, target):
-            # Additional validation for IP range
-            parts = target.split('.')
+        # Check if it looks like an IP address (4 parts separated by dots)
+        ip_parts = target.split('.')
+        if len(ip_parts) == 4:
+            # Validate each part is a valid IP octet
             try:
-                for part in parts:
-                    if int(part) > 255:
+                for part in ip_parts:
+                    if not part.isdigit() or int(part) > 255 or int(part) < 0:
                         return False
+                return target
             except ValueError:
                 return False
-            return target
         
         # Validate domain name
         domain_pattern = r'^[a-zA-Z0-9][a-zA-Z0-9-_.]*[a-zA-Z0-9]$'
